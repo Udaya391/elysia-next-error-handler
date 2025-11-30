@@ -1,0 +1,31 @@
+{
+    "name": "elysia-next-error-handler",
+    "version": "0.0.0",
+    "description": "ElysiaJS error handler plugin for Next.js App Router integration",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsup --watch",
+        "lint": "tsc --noEmit"
+    },
+    "peerDependencies": {
+        "elysia": ">=1.0.0",
+        "next": ">=14.0.0"
+    },
+    "devDependencies": {
+        "tsup": "^8.0.0",
+        "typescript": "^5.0.0",
+        "@types/node": "^20.0.0"
+    }
+}
