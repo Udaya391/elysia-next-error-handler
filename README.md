@@ -80,8 +80,48 @@ Creates the plugin. Accepts an array of error handlers that are executed in orde
 
 ### `APIError`
 
-A helper class for throwing operational errors.
+A helper class for throwing operational errors with specific status codes and error codes.
+
+#### Constructor
 
 ```typescript
-throw new APIError("Invalid input", 400, "INVALID_INPUT");
+new APIError(message: string, status?: number, code?: string)
+```
+
+- **message**: The error message string.
+- **status**: HTTP status code (default: 500).
+- **code**: Optional error code string (e.g., 'UNAUTHORIZED', 'USER_NOT_FOUND').
+
+#### Usage Examples
+
+**1. Basic Usage (Bad Request)**
+
+```typescript
+throw new APIError("Invalid input parameters", 400, "INVALID_INPUT");
+```
+
+**2. Unauthorized Access (401)**
+
+```typescript
+// Throws a 401 Unauthorized error
+throw new APIError("You must be logged in to access this resource", 401, "UNAUTHORIZED");
+```
+
+**3. Resource Not Found (404)**
+
+```typescript
+// Throws a 404 Not Found error
+throw new APIError(`User with ID ${userId} not found`, 404, "USER_NOT_FOUND");
+```
+
+#### Response Format
+
+When an `APIError` is thrown, the `apiError()` handler formats the response as:
+
+```json
+{
+  "success": false,
+  "message": "User with ID 123 not found",
+  "code": "USER_NOT_FOUND"
+}
 ```

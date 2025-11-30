@@ -1,12 +1,13 @@
+import { notFound } from "next/navigation";
 import {
   ValidationError,
   ParseError,
   NotFoundError,
-  ErrorHandler as ElysiaErrorHandler,
+  type ErrorHandler as ElysiaErrorHandler,
 } from "elysia";
+
 import { isNextJsInternalError } from "./utils";
 import { APIError } from "./error";
-import { notFound } from "next/navigation";
 
 export type ErrorContext = Parameters<ElysiaErrorHandler>[0] & {
   next: () => ReturnType<ElysiaErrorHandler>;
@@ -32,11 +33,11 @@ export const apiError =
   ({ error, set, next }) => {
     if (error instanceof APIError) {
       set.status = error.status;
-      return Response.json({
+      return {
         success: false,
         message: error.message,
         code: error.code,
-      });
+      };
     }
     return next();
   };
