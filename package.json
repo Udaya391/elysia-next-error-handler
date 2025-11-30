@@ -1,8 +1,35 @@
 {
     "name": "elysia-next-error-handler",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "ElysiaJS error handler plugin for Next.js App Router integration",
     "type": "module",
+    "keywords": [
+        "middleware",
+        "api-routes",
+        "elysia",
+        "nextjs",
+        "error-handler",
+        "api",
+        "middleware",
+        "plugin",
+        "app-router",
+        "next-api",
+        "elysia",
+        "elysiajs",
+        "elysia-plugin",
+        "elysiajs-eden",
+        "next-error-handling",
+        "elysia-next-error-handler"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/programming-with-ia/elysia-next-error-handler.git"
+    },
+    "homepage": "https://github.com/programming-with-ia/elysia-next-error-handler#readme",
+    "bugs": {
+        "url": "https://github.com/programming-with-ia/elysia-next-error-handler/issues"
+    },
+    "license": "MIT",
     "exports": {
         ".": {
             "import": "./dist/index.js",

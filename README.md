@@ -1,6 +1,11 @@
 # elysia-next-error-handler
 
+[![npm version](https://badge.fury.io/js/elysia-next-error-handler.svg)](https://badge.fury.io/js/elysia-next-error-handler)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ElysiaJS error handler plugin for seamless integration with Next.js App Router.
+
+[**Repository**](https://github.com/programming-with-ia/elysia-next-error-handler)
 
 ## Installation
 
