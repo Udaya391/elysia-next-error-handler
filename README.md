@@ -45,7 +45,7 @@ const app = new Elysia()
       notFoundError(),
 
       // Skip handling Elysia's validation and parse errors in this middleware,
-      // allowing Elysia's default behavior (or other plugins) to handle them.
+      // allowing Elysia's default behavior to handle them.
       ignoreValidationAndParseError(),
 
       // 2. Custom Logging (Optional)
@@ -80,7 +80,7 @@ Creates the plugin. Accepts an array of error handlers that are executed in orde
 - `nextJsError()`: Checks for Next.js internal errors (redirects, `notFound()`) and re-throws them so Next.js can handle them. **Must be placed early in the chain.**
 - `apiError()`: Catches `APIError` instances and returns a structured JSON response `{ success: false, message, code }`.
 - `notFoundError()`: Catches Elysia's `NotFoundError` and calls Next.js `notFound()`.
-- `ignoreValidationAndParseError()`: Ignores Elysia's validation and parse errors so they can be handled by other handlers or default behavior.
+- `ignoreValidationAndParseError()`: Ignores Elysia's validation and parse errors, allowing Elysia's default behavior to handle them.
 - `internalServerError()`: Logs the error and returns a generic 500 response.
 
 ### `APIError`
