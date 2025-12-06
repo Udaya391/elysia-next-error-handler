@@ -30,14 +30,9 @@ export const nextJsError =
 /** Handles APIError instances. */
 export const apiError =
   (): ErrorHandler =>
-  ({ error, set, next }) => {
+  ({ error, next, status }) => {
     if (error instanceof APIError) {
-      set.status = error.status;
-      return {
-        success: false,
-        message: error.message,
-        code: error.code,
-      };
+      return status(error.status as never, error.message);
     }
     return next();
   };
@@ -63,12 +58,6 @@ export const ignoreValidationAndParseError =
 
 export const internalServerError =
   (): ErrorHandler =>
-  ({ error, set }) => {
-    console.error("Internal Server Error:", error);
-
-    set.status = 500;
-    return {
-      success: false,
-      message: "Internal Server Error",
-    };
+  ({ status }) => {
+    return status(500, "Internal Server Error");
   };

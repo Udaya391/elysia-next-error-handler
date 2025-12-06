@@ -58,8 +58,8 @@ const app = new Elysia()
       },
 
       // 3. Final Fallback
-      // Catches any remaining errors (500s) and returns a generic JSON response:
-      // { success: false, message: "Internal Server Error" }
+      // Catches any remaining errors (500s) and returns a generic string response:
+      // "Internal Server Error"
       internalServerError(),
     ])
   )
@@ -78,10 +78,10 @@ Creates the plugin. Accepts an array of error handlers that are executed in orde
 ### Standard Handlers
 
 - `nextJsError()`: Checks for Next.js internal errors (redirects, `notFound()`) and re-throws them so Next.js can handle them. **Must be placed early in the chain.**
-- `apiError()`: Catches `APIError` instances and returns a structured JSON response `{ success: false, message, code }`.
+- `apiError()`: Catches `APIError` instances and returns the error message as a string.
 - `notFoundError()`: Catches Elysia's `NotFoundError` and calls Next.js `notFound()`.
 - `ignoreValidationAndParseError()`: Ignores Elysia's validation and parse errors, allowing Elysia's default behavior to handle them.
-- `internalServerError()`: Logs the error and returns a generic 500 response.
+- `internalServerError()`: Returns a generic "Internal Server Error" string with 500 status.
 
 ### `APIError`
 
@@ -119,14 +119,6 @@ throw new APIError("You must be logged in to access this resource", 401, "UNAUTH
 throw new APIError(`User with ID ${userId} not found`, 404, "USER_NOT_FOUND");
 ```
 
-#### Response Format
+#### Response
 
-When an `APIError` is thrown, the `apiError()` handler formats the response as:
-
-```json
-{
-  "success": false,
-  "message": "User with ID 123 not found",
-  "code": "USER_NOT_FOUND"
-}
-```
+When an `APIError` is thrown, the `apiError()` handler returns the error message string with the specified status code.
